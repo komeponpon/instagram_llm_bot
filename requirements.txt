@@ -1,0 +1,12 @@
+fastapi
+uvicorn
+torch
+torchvision
+torchaudio
+transformers
+datasets
+requests
+python-dotenv
+transformers
+sentencepiece
+accelerate
