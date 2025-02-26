@@ -24,8 +24,9 @@ if not INSTAGRAM_VERIFY_TOKEN or not INSTAGRAM_ACCESS_TOKEN or not IG_USER_ID:
 device = torch.device("mps" if torch.backends.mps.is_available() else "cuda" if torch.cuda.is_available() else "cpu")
 
 # モデルの読み込み
-model_path = "./model"  # または "rinna/japanese-gpt2-medium"
-tokenizer = T5Tokenizer.from_pretrained(model_path)
+model_path = "./model"
+# 元のモデルからトークナイザーを読み込む
+tokenizer = T5Tokenizer.from_pretrained("rinna/japanese-gpt2-medium")
 model = AutoModelForCausalLM.from_pretrained(model_path).to(device)
 
 app = FastAPI()
